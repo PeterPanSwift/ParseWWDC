@@ -1,0 +1,1438 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 8]> <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<head>
+    <script>
+        var SitePath = '/';
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no" />
+    <title>大臺北公車307</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=0.3, maximum-scale=2, minimum-scale=0.3, user-scalable=yes">
+  
+    <link rel="stylesheet" href="/styles/html5reset-1.6.1.min.css"/>
+    <link href="/web/css?v=pNOZ1rF55gMtUQNnMKDv3FsATgL411nOECuxjRiaIK01" rel="stylesheet"/>
+
+    
+    
+    
+    
+    <link href="/sweetAlert/css?v=Q7l7a83fZdl7_6jt13P3HsHoLWvbYv1YpqCreuQlPuQ1" rel="stylesheet"/>
+
+    
+<link href="/ebus/mapcss?v=1CGxf5WtWpf79rtrZ2KO1Hv6A11zlRewMKVwPbqffGc1" rel="stylesheet"/>
+
+
+
+    <script>
+        var viccknCulture = null;
+        function Mybus(event, _elem) {
+            event.preventDefault();
+            var islogin = jQuery('a.login-link');
+            if (islogin) {
+                //
+                alert(i18n._('Please Login'));
+            } else {
+                window.location.replace(_elem.href);
+            }
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <script src="/bundles/jquery?v=q7mEgdXrcJJy32YRlrFef8zHiCgDFSUdNzefyodQYIQ1"></script>
+
+    
+    
+</head>
+<body class="tebus">
+    <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or
+    <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+    <a href="javascript:void(0);" class="tebus-up web-none" title="置頂"></a>  
+    <!-- being header web-->
+    <header class="tebus-main-header-c  pad-none">
+        <div class="teBUS-main-header">
+            <div class="teBUS-logo-c">
+                <a href="/Dybus.aspx" class="teBUS-logo" title="首頁"></a>
+                <p class="teBUS-visite">到訪人數<span class="teBUS-visite-number">82174134</span></p>
+            </div>
+            <nav class="teBUS-nav-language-marquee-c">
+                <ul class="teBUS-nav-language-c">
+                    
+                            <li class="pad-none">
+                                
+                                <a class="nav-language-link" href="https://e-bus.tpc.gov.tw" target="_blank">無障礙 </a> /
+                            </li>
+
+                    
+                    <li><a class="nav-language-link" href="/Home/SetCulture?culture=zh-TW&amp;returnURL=%2FEBus%2FVsSimpleMap%3Frouteid%3D0100030700%26gb%3D1">中文</a> / </li>
+                    
+                    
+                    <li><a class="nav-language-link login-link" href="javascript:void(0);" alt="會員登入">會員登入</a>/ </li>
+
+                    <li><a href="/MyBus" class="nav-language-link" onclick="Mybus(event, this)">我的公車</a></li>
+                    <li>/<a class="nav-language-link" href="https://www.pto.gov.taipei/Questionnaire_Content.aspx?n=63FD5A257079935F&s=E4505D512A861F41&sms=7F78FC0503254E9A" target="_blank">滿意度調查</a> </li>
+
+    
+                    
+                </ul>
+                <input id="marqueeSpeed" name="marqueeSpeed" type="hidden" value="6" />
+                
+                <marquee scrollamount="2@ViewData["SpeedVal"]"><div class='teBUS-marquee2' ></div></marquee>
+            </nav>
+        </div>
+    </header>
+    <!-- end header web-->
+    <!-- being header pad-->
+    <header class="teBUS-pad-main-header-c web-none">
+
+        <div class="teBUS-pad-main-nav-icon">
+            <ul class="teBUS-nav-main-language-pad-c">
+                <li class="nav-main-language-title">語言</li>
+
+                <li>
+                    <span class="label-checkbox-language-c">
+
+<form action="/Home/SetCulture?returnURL=%2FEBus%2FVsSimpleMap%3Frouteid%3D0100030700%26gb%3D1" id="SetCultureForm" method="get" role="form">                            <label class="label-radio label-checkbox-language">
+                                <input checked="checked" class="radio fast-search-radio" id="culture" name="culture" type="radio" value="zh-TW" />
+                                中文
+                            </label>
+                            <label class="label-radio label-checkbox-language">
+                                <input class="radio fast-search-radio" id="culture" name="culture" type="radio" value="en" />
+                                English
+                            </label>
+<input id="returnURL" name="returnURL" type="hidden" value="/EBus/VsSimpleMap?routeid=0100030700&amp;gb=1" /></form>                    </span>
+                </li>
+                <li class="nav-main-language-title">功能選單</li>
+                
+                <li><a href="/ebus" class="main-nav-pad">公車動態</a></li>
+                <li><a href="/Query/BusRoute" class="main-nav-pad">GIS動態</a></li>
+                <li><a href="/Transfer/TransPlan" class="main-nav-pad">轉乘規劃</a></li>
+               
+                    <li><a href="https://pda.5284.gov.taipei" class="main-nav-pad">PDA</a></li>
+                    <li><a href="/projectbus" class="main-nav-pad">專區</a></li>
+                        <li><a href="/RelatedLinks" class="main-nav-pad">相關連結</a></li>
+                        <li><a href="/Feedback" class="main-nav-pad">意見回饋</a></li>
+                <li><a href="/Query/BusDynamicMainList" class="main-nav-pad">公車動態</a></li>
+            </ul>
+        </div>
+        <div class="teBUS-main-nav-pad-c">
+            <a href=javascript:history.back(); class="teBUS-pad-main-come-back-icon" title="回上一頁"></a>
+            <a href="/Dybus.aspx" class="teBUS-logo-pad" title="logo" alt="logo"></a>
+            <a href=javascript:toggleMenu(); class="teBUS-pad-main-nav-icon-c" title=""></a>
+        </div>
+
+    </header>
+    <!-- end header pad-->
+    <!-- being content -->
+    <div class="teBUS-main-container">
+        
+        <!--begin main list-->
+        
+        <!--end main list -->
+        
+<input name="__RequestVerificationToken" type="hidden" value="j8QgxRJGVAgh7iwvRYylFckMRulwyaQyCtN-EPEYIzVMUMyqsZhI6H8IHnlXY18nMLuBmcZpMcmHjrgvoKiiFgUKM7E1" />
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54651832-1', { 'cookieDomain': 'none' });
+  ga('set', 'language', 'zh-TW');
+  ga('set', 'screenResolution', screen.width + 'x' + screen.height);
+  ga('set', 'viewportSize', screen.availWidth + 'x' + screen.availHeight);
+  ga('set', 'screenColors', screen.colorDepth + '-bits');
+  ga('set', 'hostname', location.hostname);
+
+  ga('send', 'pageview');
+  ga('send', 'event', {
+      'eventCategory': 'PageView',
+      'eventAction': 'Inter',
+      'eventLabel': document.location.pathname,
+      'eventValue': 1
+  });
+
+</script>
+
+<script>
+    $(function () {
+        var token = $('input[name=__RequestVerificationToken]').filter(function () { return $(this).val() !== '' });
+        $('input[name=__RequestVerificationToken]').val(token.val());
+    });
+</script>
+
+
+
+
+
+<section class="info-c" style="width: calc(100%);">
+    <div class="panel-group" id="accordion">
+
+        <div class="map_container">
+            <div id="plMapHeader">
+                <br />
+                  
+<div>
+        <a href="../EBus/VsSimpleMap?routeid=0100030700&gb=0">
+            <span class="rt_title">307</span>
+        </a>
+
+        <br /><br />
+
+        <span class="rt_dir_back" onclick="AptsBusMap.changeGoBack('0');">往 撫遠街</span>
+            <span class="rt_dir_go" onclick="AptsBusMap.changeGoBack('1');">往 板橋</span>
+
+        <a href="../Route/StopsOfRoute?routeid=0100030700">
+            <span class="rt_dir_back2">GIS查詢</span>
+        </a>
+        <a href="../MapOverview?nid=0100030700" target="_blank">
+            <span class="rt_dir_back2">路線圖</span>
+        </a>
+
+
+        <p>
+
+
+        </p>
+
+</div>
+
+                <br/><div id="plLastUpdateTime" class="rt_time"></div>
+            </div>
+            <div id="plMapIcon">
+                <div>
+    <div>
+        <span style="font-size: 12px; text-align:left; padding:10px 5px">
+            <img src="../images/images-sm/起迄點.png" alt="起訖點" style="width:20px; height:20px" />
+            <span style="padding-right: 8px">起訖點</span>
+            <img src="../images/images-sm/停靠站.png" alt="停靠站" style="width:20px; height:20px" />
+            <span style="padding-right: 8px">停靠站</span>
+            <img src="../images/images-sm/緩衝區.png" alt="緩衝區" style="width:20px; height:20px" />
+            <span style="padding-right: 8px">緩衝區</span>
+            <img src="../images/images-sm/台鐵示意圖.png" alt="台鐵站" style="width:20px; height:20px" />
+            <span style="padding-right: 8px">台鐵站</span>
+            <img src="../images/images-sm/捷運示意圖.png" alt="捷運站" style="width:20px; height:20px" />
+            <span style="padding-right: 8px">捷運站</span>
+            <img src="../images/images-sm/youbick.png" alt="Youbike" style="width:20px; height:20px" />
+            <span style="padding-right: 8px">Youbike</span>
+            <img src="../images/images-sm/一般公車向右邊.gif" alt="一般公車" style="width:28px; height:17px" />
+            <span style="padding-right: 8px">一般公車</span>
+            <img src="../images/images-sm/低底盤公車向右邊.gif" alt="低地版公車" style="width:28px; height:17px" />
+            <span style="padding-right: 8px">低地板公車</span>
+            <img src="../images/images-sm/大復康巴士向右邊.gif" alt="大復康巴士" style="width:28px; height:17px" />
+            <span style="padding-right: 8px">大復康巴士</span>
+            
+            
+            <span id="plLastUpdateTime" class="rt_update_time"></span>
+        </span>
+    </div>
+</div>
+
+            </div>
+            <div id="plMapInfo">
+                
+<div>
+    <div class="rt_infoblock">
+        <div class="rt_infoblock_header" id="aRouteInfo">
+            路線資訊
+            <span style="float:right"><a href="#" id="aRouteInfoMark">+</a></span>
+        </div>
+        <div class="rt_infoblock_content hidden" id="pl_route_info">
+            <ul class="info">
+                <li>管轄單位：臺北市</li>
+                <li>
+                    起訖站名：板橋 - 撫遠街 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </li>
+                    <li>
+                        頭末班車&nbsp;&nbsp;
+                        <ol>
+                            <li>
+                                平日：0500~2210                                &nbsp;&nbsp;
+                            </li>
+                            <li>
+                                假日： 0500~2210                            </li>
+                        </ol>
+                    </li>
+        <li>
+            發車間距
+            <ol>
+                <li>平日：<br />尖峰:4分至6分<br/>離峰:5分至10分<br/>平日2100後5-10分一班次</li>
+                <li>假日：<br />尖峰:7分至10分<br/>離峰:7分至10分<br/>假日2100後10-15分一班次</li>
+            </ol>
+        </li>
+        <li>分段緩衝區：萬大國小-中和國稅局 &nbsp; &nbsp;收費方式：兩段票</li>
+                    <li>業者服務電話 : 首都客運:0800-000-866,臺北客運:0800-003-307</li>
+</ul>
+        </div>
+    </div>
+    <div class="rt_infoblock">
+        <div class="rt_infoblock_header" id="aRouteMemo">
+            備註
+            <span style="float:right"><a href="#" id="aRouteMemoMark">+</a></span>
+        </div>
+        <div class="rt_infoblock_content hidden" id="pl_route_memo">
+            
+        </div>
+    </div>
+    <div class="clear"></div>
+
+</div>
+            </div>
+            <div id="plMapStops" class="map_stops">
+                
+
+    <div class="sb left " id="block_0" data-floating="left" data-stop="莊敬里">
+        <div class="snz"><span>莊敬里</span></div>
+        <div class="sflag" id="sflag_0">
+                                                                    </div>
+        <div class="sicon-endpoint"></div>
+        <div class="eta" id="eta_0"></div>
+        <div class="busi" id="busi_0"></div>
+        <div class="buso" id="buso_0"></div>
+        <div class="bpni" id="bni_0"></div>
+        <div class="bpno" id="bno_0"></div>
+    </div>
+    <div class="sm left " id="block_1" data-floating="left" data-stop="新益里">
+        <div class="snz"><span>新益里</span></div>
+        <div class="sflag" id="sflag_1">
+                                                                <span class="stopIconYouBike"></span>
+                    </div>
+        <div class="sicon"></div>
+        <div class="eta" id="eta_1"></div>
+        <div class="busi" id="busi_1"></div>
+        <div class="buso" id="buso_1"></div>
+        <div class="bpni" id="bni_1"></div>
+        <div class="bpno" id="bno_1"></div>
+    </div>
+    <div class="sm left " id="block_2" data-floating="left" data-stop="民生國中">
+        <div class="snz"><span>民生國中</span></div>
+        <div class="sflag" id="sflag_2">
+                                                                    </div>
+        <div class="sicon"></div>
+        <div class="eta" id="eta_2"></div>
+        <div class="busi" id="busi_2"></div>
+        <div class="buso" id="buso_2"></div>
+        <div class="bpni" id="bni_2"></div>
+        <div class="bpno" id="bno_2"></div>
+    </div>
+    <div class="sm left " id="block_3" data-floating="left" data-stop="新東里">
+        <div class="snz"><span>新東里</span></div>
+        <div class="sflag" id="sflag_3">
+                                                                    </div>
+        <div class="sicon"></div>
+        <div class="eta" id="eta_3"></div>
+        <div class="busi" id="busi_3"></div>
+        <div class="buso" id="buso_3"></div>
+        <div class="bpni" id="bni_3"></div>
+        <div class="bpno" id="bno_3"></div>
+    </div>
+    <div class="sm left " id="block_4" data-floating="left" data-stop="發電所(西松高中)">
+        <div class="snz"><span>發電所(西松高中)</span></div>
+        <div class="sflag" id="sflag_4">
+                                                                    </div>
+        <div class="sicon"></div>
+        <div class="eta" id="eta_4"></div>
+        <div class="busi" id="busi_4"></div>
+        <div class="buso" id="buso_4"></div>
+        <div class="bpni" id="bni_4"></div>
+        <div class="bpno" id="bno_4"></div>
+    </div>
+    <div class="sm left " id="block_5" data-floating="left" data-stop="南松山(塔悠)">
+        <div class="snz"><span>南松山(塔悠)</span></div>
+        <div class="sflag" id="sflag_5">
+                                                                    </div>
+        <div class="sicon"></div>
+        <div class="eta" id="eta_5"></div>
+        <div class="busi" id="busi_5"></div>
+        <div class="buso" id="buso_5"></div>
+        <div class="bpni" id="bni_5"></div>
+        <div class="bpno" id="bno_5"></div>
+    </div>
+    <div class="sm left " id="block_6" data-floating="left" data-stop="南松山(南京)">
+        <div class="snz"><span>南松山(南京)</span></div>
+        <div class="sflag" id="sflag_6">
+                                                                    </div>
+        <div class="sicon"></div>
+        <div class="eta" id="eta_6"></div>
+        <div class="busi" id="busi_6"></div>
+        <div class="buso" id="buso_6"></div>
+        <div class="bpni" id="bni_6"></div>
+        <div class="bpno" id="bno_6"></div>
+    </div>
+    <div class="sm left " id="block_7" data-floating="left" data-stop="南京公寓(捷運南京三民)">
+        <div class="snz"><span>南京公寓(捷運南京三民)</span></div>
+        <div class="sflag" id="sflag_7">
+                            <span class="stopIconMRT"></span>
+                                                        </div>
+        <div class="sicon"></div>
+        <div class="eta" id="eta_7"></div>
+        <div class="busi" id="busi_7"></div>
+        <div class="buso" id="buso_7"></div>
+        <div class="bpni" id="bni_7"></div>
+        <div class="bpno" id="bno_7"></div>
+    </div>
+            <div class="srt left "></div>
+                <div class="srb right "></div>
+    <div class="sm right " id="block_8" data-floating="right" data-stop="南京三民路口">
+        <div class="snz2"><span>南京三民路口</span></div>
+        <div class="sflag2" id="sflag_8">
+                                                                    </div>
+        <div class="sicon2"></div>
+        <div class="eta2" id="eta_8"></div>
+        <div class="busi2" id="busi_8"></div>
+        <div class="buso2" id="buso_8"></div>
+        <div class="bpni2" id="bni_8"></div>
+        <div class="bpno2" id="bno_8"></div>
+    </div>
+    <div class="sm right " id="block_9" data-floating="right" data-stop="南京寧安街口">
+        <div class="snz2"><span>南京寧安街口</span></div>
+        <div class="sflag2" id="sflag_9">
+                                                                    </div>
+        <div class="sicon2"></div>
+        <div class="eta2" id="eta_9"></div>
+        <div class="busi2" id="busi_9"></div>
+        <div class="buso2" id="buso_9"></div>
+        <div class="bpni2" id="bni_9"></div>
+        <div class="bpno2" id="bno_9"></div>
+    </div>
+    <div class="sm right " id="block_10" data-floating="right" data-stop="南京敦化路口(小巨蛋)">
+        <div class="snz2"><span>南京敦化路口(小巨蛋)</span></div>
+        <div class="sflag2" id="sflag_10">
+                                                                    </div>
+        <div class="sicon2"></div>
+        <div class="eta2" id="eta_10"></div>
+        <div class="busi2" id="busi_10"></div>
+        <div class="buso2" id="buso_10"></div>
+        <div class="bpni2" id="bni_10"></div>
+        <div class="bpno2" id="bno_10"></div>
+    </div>
+    <div class="sm right " id="block_11" data-floating="right" data-stop="捷運南京復興站">
+        <div class="snz2"><span>捷運南京復興站</span></div>
+        <div class="sflag2" id="sflag_11">
+                            <span class="stopIconMRT"></span>
+                                                    <span class="stopIconYouBike"></span>
+                    </div>
+        <div class="sicon2"></div>
+        <div class="eta2" id="eta_11"></div>
+        <div class="busi2" id="busi_11"></div>
+        <div class="buso2" id="buso_11"></div>
+        <div class="bpni2" id="bni_11"></div>
+        <div class="bpno2" id="bno_11"></div>
+    </div>
+    <div class="sm right " id="block_12" data-floating="right" data-stop="南京龍江路口">
+        <div class="snz2"><span>南京龍江路口</span></div>
+        <div class="sflag2" id="sflag_12">
+                                                                    </div>
+        <div class="sicon2"></div>
+        <div class="eta2" id="eta_12"></div>
+        <div class="busi2" id="busi_12"></div>
+        <div class="buso2" id="buso_12"></div>
+        <div class="bpni2" id="bni_12"></div>
+        <div class="bpno2" id="bno_12"></div>
+    </div>
+    <div class="sm right " id="block_13" data-floating="right" data-stop="南京建國路口">
+        <div class="snz2"><span>南京建國路口</span></div>
+        <div class="sflag2" id="sflag_13">
+                                                                <span class="stopIconYouBike"></span>
+                    </div>
+        <div class="sicon2"></div>
+        <div class="eta2" id="eta_13"></div>
+        <div class="busi2" id="busi_13"></div>
+        <div class="buso2" id="buso_13"></div>
+        <div class="bpni2" id="bni_13"></div>
+        <div class="bpno2" id="bno_13"></div>
+    </div>
+    <div class="sm right " id="block_14" data-floating="right" data-stop="捷運松江南京站">
+        <div class="snz2"><span>捷運松江南京站</span></div>
+        <div class="sflag2" id="sflag_14">
+                            <span class="stopIconMRT"></span>
+                                                    <span class="stopIconYouBike"></span>
+                    </div>
+        <div class="sicon2"></div>
+        <div class="eta2" id="eta_14"></div>
+        <div class="busi2" id="busi_14"></div>
+        <div class="buso2" id="buso_14"></div>
+        <div class="bpni2" id="bni_14"></div>
+        <div class="bpno2" id="bno_14"></div>
+    </div>
+                <div class="slt right "></div>
+                <div class="slb left "></div>
+    <div class="sm left " id="block_15" data-floating="left" data-stop="南京吉林路口">
+        <div class="snz"><span>南京吉林路口</span></div>
+        <div class="sflag" id="sflag_15">
+                                                                    </div>
+        <div class="sicon"></div>
+        <div class="eta" id="eta_15"></div>
+        <div class="busi" id="busi_15"></div>
+        <div class="buso" id="buso_15"></div>
+        <div class="bpni" id="bni_15"></div>
+        <div class="bpno" id="bno_15"></div>
+    </div>
+    <div class="sm left " id="block_16" data-floating="left" data-stop="南京林森路口">
+        <div class="snz"><span>南京林森路口</span></div>
+        <div class="sflag" id="sflag_16">
+                                                                <span class="stopIconYouBike"></span>
+                    </div>
+        <div class="sicon"></div>
+        <div class="eta" id="eta_16"></div>
+        <div class="busi" id="busi_16"></div>
+        <div class="buso" id="buso_16"></div>
+        <div class="bpni" id="bni_16"></div>
+        <div class="bpno" id="bno_16"></div>
+    </div>
+    <div class="sm left " id="block_17" data-floating="left" data-stop="中山市場">
+        <div class="snz"><span>中山市場</span></div>
+        <div class="sflag" id="sflag_17">
+                                                                    </div>
+        <div class="sicon"></div>
+        <div class="eta" id="eta_17"></div>
+        <div class="busi" id="busi_17"></div>
+        <div class="buso" id="buso_17"></div>
+        <div class="bpni" id="bni_17"></div>
+        <div class="bpno" id="bno_17"></div>
+    </div>
+    <div class="sm left " id="block_18" data-floating="left" data-stop="行政院">
+        <div class="snz"><span>行政院</span></div>
+        <div class="sflag" id="sflag_18">
+                                                                    </div>
+        <div class="sicon"></div>
+        <div class="eta" id="eta_18"></div>
+        <div class="busi" id="busi_18"></div>
+        <div class="buso" id="buso_18"></div>
+        <div class="bpni" id="bni_18"></div>
+        <div class="bpno" id="bno_18"></div>
+    </div>
+    <div class="sm left " id="block_19" data-floating="left" data-stop="臺北車站(忠孝)">
+        <div class="snz"><span>臺北車站(忠孝)</span></div>
+        <div class="sflag" id="sflag_19">
+                <span class="stopIconTRW"></span>
+                                                                    </div>
+        <div class="sicon"></div>
+        <div class="eta" id="eta_19"></div>
+        <div class="busi" id="busi_19"></div>
+        <div class="buso" id="buso_19"></div>
+        <div class="bpni" id="bni_19"></div>
+        <div class="bpno" id="bno_19"></div>
+    </div>
+    <div class="sm left " id="block_20" data-floating="left" data-stop="中華路北站">
+        <div class="snz"><span>中華路北站</span></div>
+        <div class="sflag" id="sflag_20">
+                                                                    </div>
+        <div class="sicon"></div>
+        <div class="eta" id="eta_20"></div>
+        <div class="busi" id="busi_20"></div>
+        <div class="buso" id="buso_20"></div>
+        <div class="bpni" id="bni_20"></div>
+        <div class="bpno" id="bno_20"></div>
+    </div>
+    <div class="sm left " id="block_21" data-floating="left" data-stop="捷運西門站">
+        <div class="snz"><span>捷運西門站</span></div>
+        <div class="sflag" id="sflag_21">
+                            <span class="stopIconMRT"></span>
+                                                    <span class="stopIconYouBike"></span>
+                    </div>
+        <div class="sicon"></div>
+        <div class="eta" id="eta_21"></div>
+        <div class="busi" id="busi_21"></div>
+        <div class="buso" id="buso_21"></div>
+        <div class="bpni" id="bni_21"></div>
+        <div class="bpno" id="bno_21"></div>
+    </div>
+                <div class="srt left "></div>
+                <div class="srb right "></div>
+    <div class="sm right " id="block_22" data-floating="right" data-stop="小南門">
+        <div class="snz2"><span>小南門</span></div>
+        <div class="sflag2" id="sflag_22">
+                                                                <span class="stopIconYouBike"></span>
+                    </div>
+        <div class="sicon2"></div>
+        <div class="eta2" id="eta_22"></div>
+        <div class="busi2" id="busi_22"></div>
+        <div class="buso2" id="buso_22"></div>
+        <div class="bpni2" id="bni_22"></div>
+        <div class="bpno2" id="bno_22"></div>
+    </div>
+    <div class="sm right " id="block_23" data-floating="right" data-stop="聯合醫院和平院區">
+        <div class="snz2"><span>聯合醫院和平院區</span></div>
+        <div class="sflag2" id="sflag_23">
+                                                                    </div>
+        <div class="sicon2"></div>
+        <div class="eta2" id="eta_23"></div>
+        <div class="busi2" id="busi_23"></div>
+        <div class="buso2" id="buso_23"></div>
+        <div class="bpni2" id="bni_23"></div>
+        <div class="bpno2" id="bno_23"></div>
+    </div>
+    <div class="sm right " id="block_24" data-floating="right" data-stop="大埔街">
+        <div class="snz2"><span>大埔街</span></div>
+        <div class="sflag2" id="sflag_24">
+                                                                    </div>
+        <div class="sicon2"></div>
+        <div class="eta2" id="eta_24"></div>
+        <div class="busi2" id="busi_24"></div>
+        <div class="buso2" id="buso_24"></div>
+        <div class="bpni2" id="bni_24"></div>
+        <div class="bpno2" id="bno_24"></div>
+    </div>
+    <div class="sm right " id="block_25" data-floating="right" data-stop="莒光派出所">
+        <div class="snz2"><span>莒光派出所</span></div>
+        <div class="sflag2" id="sflag_25">
+                                                                    </div>
+        <div class="sicon2"></div>
+        <div class="eta2" id="eta_25"></div>
+        <div class="busi2" id="busi_25"></div>
+        <div class="buso2" id="buso_25"></div>
+        <div class="bpni2" id="bni_25"></div>
+        <div class="bpno2" id="bno_25"></div>
+    </div>
+    <div class="sm right " id="block_26" data-floating="right" data-stop="萬大路">
+        <div class="snz2"><span>萬大路</span></div>
+        <div class="sflag2" id="sflag_26">
+                                                                    </div>
+        <div class="sicon2"></div>
+        <div class="eta2" id="eta_26"></div>
+        <div class="busi2" id="busi_26"></div>
+        <div class="buso2" id="buso_26"></div>
+        <div class="bpni2" id="bni_26"></div>
+        <div class="bpno2" id="bno_26"></div>
+    </div>
+    <div class="sm right " id="block_27" data-floating="right" data-stop="西藏路口">
+        <div class="snz2"><span>西藏路口</span></div>
+        <div class="sflag2" id="sflag_27">
+                                                                    </div>
+        <div class="sicon2"></div>
+        <div class="eta2" id="eta_27"></div>
+        <div class="busi2" id="busi_27"></div>
+        <div class="buso2" id="buso_27"></div>
+        <div class="bpni2" id="bni_27"></div>
+        <div class="bpno2" id="bno_27"></div>
+    </div>
+    <div class="sm right " id="block_28" data-floating="right" data-stop="德昌街口">
+        <div class="snz2"><span>德昌街口</span></div>
+        <div class="sflag2" id="sflag_28">
+                                                                    </div>
+        <div class="sicon2"></div>
+        <div class="eta2" id="eta_28"></div>
+        <div class="busi2" id="busi_28"></div>
+        <div class="buso2" id="buso_28"></div>
+        <div class="bpni2" id="bni_28"></div>
+        <div class="bpno2" id="bno_28"></div>
+    </div>
+                <div class="slt right "></div>
+                <div class="slb left "></div>
+    <div class="sm left linebb" id="block_29" data-floating="left" data-stop="萬大國小">
+        <div class="snz-buf"><span>萬大國小</span></div>
+        <div class="sflag" id="sflag_29">
+                                                                    </div>
+        <div class="sicon-buf"></div>
+        <div class="eta" id="eta_29"></div>
+        <div class="busi" id="busi_29"></div>
+        <div class="buso" id="buso_29"></div>
+        <div class="bpni" id="bni_29"></div>
+        <div class="bpno" id="bno_29"></div>
+    </div>
+    <div class="sm left lineb" id="block_30" data-floating="left" data-stop="果菜市場">
+        <div class="snz-buf"><span>果菜市場</span></div>
+        <div class="sflag" id="sflag_30">
+                                                                    </div>
+        <div class="sicon-buf"></div>
+        <div class="eta" id="eta_30"></div>
+        <div class="busi" id="busi_30"></div>
+        <div class="buso" id="buso_30"></div>
+        <div class="bpni" id="bni_30"></div>
+        <div class="bpno" id="bno_30"></div>
+    </div>
+    <div class="sm left lineb" id="block_31" data-floating="left" data-stop="華中橋">
+        <div class="snz-buf"><span>華中橋</span></div>
+        <div class="sflag" id="sflag_31">
+                                                                    </div>
+        <div class="sicon-buf"></div>
+        <div class="eta" id="eta_31"></div>
+        <div class="busi" id="busi_31"></div>
+        <div class="buso" id="buso_31"></div>
+        <div class="bpni" id="bni_31"></div>
+        <div class="bpno" id="bno_31"></div>
+    </div>
+    <div class="sm left lineb" id="block_32" data-floating="left" data-stop="捷運中和站">
+        <div class="snz-buf"><span>捷運中和站</span></div>
+        <div class="sflag" id="sflag_32">
+                            <span class="stopIconMRT"></span>
+                                                    <span class="stopIconYouBike"></span>
+                    </div>
+        <div class="sicon-buf"></div>
+        <div class="eta" id="eta_32"></div>
+        <div class="busi" id="busi_32"></div>
+        <div class="buso" id="buso_32"></div>
+        <div class="bpni" id="bni_32"></div>
+        <div class="bpno" id="bno_32"></div>
+    </div>
+    <div class="sm left lineb" id="block_33" data-floating="left" data-stop="連城景平路(暫時裁撤)">
+        <div class="snz-buf"><span>連城景平路(暫時裁撤)</span></div>
+        <div class="sflag" id="sflag_33">
+                                                                    </div>
+        <div class="sicon-buf"></div>
+        <div class="eta" id="eta_33"></div>
+        <div class="busi" id="busi_33"></div>
+        <div class="buso" id="buso_33"></div>
+        <div class="bpni" id="bni_33"></div>
+        <div class="bpno" id="bno_33"></div>
+    </div>
+    <div class="sm left linebe" id="block_34" data-floating="left" data-stop="中和國稅局">
+        <div class="snz-buf"><span>中和國稅局</span></div>
+        <div class="sflag" id="sflag_34">
+                                                                    </div>
+        <div class="sicon-buf"></div>
+        <div class="eta" id="eta_34"></div>
+        <div class="busi" id="busi_34"></div>
+        <div class="buso" id="buso_34"></div>
+        <div class="bpni" id="bni_34"></div>
+        <div class="bpno" id="bno_34"></div>
+    </div>
+    <div class="sm left " id="block_35" data-floating="left" data-stop="台貿一村">
+        <div class="snz"><span>台貿一村</span></div>
+        <div class="sflag" id="sflag_35">
+                                                                <span class="stopIconYouBike"></span>
+                    </div>
+        <div class="sicon"></div>
+        <div class="eta" id="eta_35"></div>
+        <div class="busi" id="busi_35"></div>
+        <div class="buso" id="buso_35"></div>
+        <div class="bpni" id="bni_35"></div>
+        <div class="bpno" id="bno_35"></div>
+    </div>
+                <div class="srt left "></div>
+                <div class="srb right "></div>
+    <div class="sm right " id="block_36" data-floating="right" data-stop="連城錦和路口(暫時裁撤)">
+        <div class="snz2"><span>連城錦和路口(暫時裁撤)</span></div>
+        <div class="sflag2" id="sflag_36">
+                                                                    </div>
+        <div class="sicon2"></div>
+        <div class="eta2" id="eta_36"></div>
+        <div class="busi2" id="busi_36"></div>
+        <div class="buso2" id="buso_36"></div>
+        <div class="bpni2" id="bni_36"></div>
+        <div class="bpno2" id="bno_36"></div>
+    </div>
+    <div class="sm right " id="block_37" data-floating="right" data-stop="連城中正路口">
+        <div class="snz2"><span>連城中正路口</span></div>
+        <div class="sflag2" id="sflag_37">
+                                                                    </div>
+        <div class="sicon2"></div>
+        <div class="eta2" id="eta_37"></div>
+        <div class="busi2" id="busi_37"></div>
+        <div class="buso2" id="buso_37"></div>
+        <div class="bpni2" id="bni_37"></div>
+        <div class="bpno2" id="bno_37"></div>
+    </div>
+    <div class="sm right " id="block_38" data-floating="right" data-stop="連城路">
+        <div class="snz2"><span>連城路</span></div>
+        <div class="sflag2" id="sflag_38">
+                                                                    </div>
+        <div class="sicon2"></div>
+        <div class="eta2" id="eta_38"></div>
+        <div class="busi2" id="busi_38"></div>
+        <div class="buso2" id="buso_38"></div>
+        <div class="bpni2" id="bni_38"></div>
+        <div class="bpno2" id="bno_38"></div>
+    </div>
+    <div class="sm right " id="block_39" data-floating="right" data-stop="中和高中(員山路)">
+        <div class="snz2"><span>中和高中(員山路)</span></div>
+        <div class="sflag2" id="sflag_39">
+                                                                    </div>
+        <div class="sicon2"></div>
+        <div class="eta2" id="eta_39"></div>
+        <div class="busi2" id="busi_39"></div>
+        <div class="buso2" id="buso_39"></div>
+        <div class="bpni2" id="bni_39"></div>
+        <div class="bpno2" id="bno_39"></div>
+    </div>
+    <div class="sm right " id="block_40" data-floating="right" data-stop="員山派出所">
+        <div class="snz2"><span>員山派出所</span></div>
+        <div class="sflag2" id="sflag_40">
+                                                                    </div>
+        <div class="sicon2"></div>
+        <div class="eta2" id="eta_40"></div>
+        <div class="busi2" id="busi_40"></div>
+        <div class="buso2" id="buso_40"></div>
+        <div class="bpni2" id="bni_40"></div>
+        <div class="bpno2" id="bno_40"></div>
+    </div>
+    <div class="sm right " id="block_41" data-floating="right" data-stop="積穗國中">
+        <div class="snz2"><span>積穗國中</span></div>
+        <div class="sflag2" id="sflag_41">
+                                                                    </div>
+        <div class="sicon2"></div>
+        <div class="eta2" id="eta_41"></div>
+        <div class="busi2" id="busi_41"></div>
+        <div class="buso2" id="buso_41"></div>
+        <div class="bpni2" id="bni_41"></div>
+        <div class="bpno2" id="bno_41"></div>
+    </div>
+    <div class="sm right " id="block_42" data-floating="right" data-stop="員山公園">
+        <div class="snz2"><span>員山公園</span></div>
+        <div class="sflag2" id="sflag_42">
+                                                                    </div>
+        <div class="sicon2"></div>
+        <div class="eta2" id="eta_42"></div>
+        <div class="busi2" id="busi_42"></div>
+        <div class="buso2" id="buso_42"></div>
+        <div class="bpni2" id="bni_42"></div>
+        <div class="bpno2" id="bno_42"></div>
+    </div>
+                <div class="slt right "></div>
+                <div class="slb left "></div>
+    <div class="sm left " id="block_43" data-floating="left" data-stop="積穗">
+        <div class="snz"><span>積穗</span></div>
+        <div class="sflag" id="sflag_43">
+                                                                <span class="stopIconYouBike"></span>
+                    </div>
+        <div class="sicon"></div>
+        <div class="eta" id="eta_43"></div>
+        <div class="busi" id="busi_43"></div>
+        <div class="buso" id="buso_43"></div>
+        <div class="bpni" id="bni_43"></div>
+        <div class="bpno" id="bno_43"></div>
+    </div>
+    <div class="sm left " id="block_44" data-floating="left" data-stop="板橋監理站">
+        <div class="snz"><span>板橋監理站</span></div>
+        <div class="sflag" id="sflag_44">
+                                                                    </div>
+        <div class="sicon"></div>
+        <div class="eta" id="eta_44"></div>
+        <div class="busi" id="busi_44"></div>
+        <div class="buso" id="buso_44"></div>
+        <div class="bpni" id="bni_44"></div>
+        <div class="bpno" id="bno_44"></div>
+    </div>
+    <div class="sm left " id="block_45" data-floating="left" data-stop="環球購物中心">
+        <div class="snz"><span>環球購物中心</span></div>
+        <div class="sflag" id="sflag_45">
+                                                                <span class="stopIconYouBike"></span>
+                    </div>
+        <div class="sicon"></div>
+        <div class="eta" id="eta_45"></div>
+        <div class="busi" id="busi_45"></div>
+        <div class="buso" id="buso_45"></div>
+        <div class="bpni" id="bni_45"></div>
+        <div class="bpno" id="bno_45"></div>
+    </div>
+    <div class="sm left " id="block_46" data-floating="left" data-stop="國泰街口">
+        <div class="snz"><span>國泰街口</span></div>
+        <div class="sflag" id="sflag_46">
+                                                                    </div>
+        <div class="sicon"></div>
+        <div class="eta" id="eta_46"></div>
+        <div class="busi" id="busi_46"></div>
+        <div class="buso" id="buso_46"></div>
+        <div class="bpni" id="bni_46"></div>
+        <div class="bpno" id="bno_46"></div>
+    </div>
+    <div class="sm left " id="block_47" data-floating="left" data-stop="電信訓練所">
+        <div class="snz"><span>電信訓練所</span></div>
+        <div class="sflag" id="sflag_47">
+                                                                    </div>
+        <div class="sicon"></div>
+        <div class="eta" id="eta_47"></div>
+        <div class="busi" id="busi_47"></div>
+        <div class="buso" id="buso_47"></div>
+        <div class="bpni" id="bni_47"></div>
+        <div class="bpno" id="bno_47"></div>
+    </div>
+    <div class="sm left " id="block_48" data-floating="left" data-stop="民族區運路口">
+        <div class="snz"><span>民族區運路口</span></div>
+        <div class="sflag" id="sflag_48">
+                                                                    </div>
+        <div class="sicon"></div>
+        <div class="eta" id="eta_48"></div>
+        <div class="busi" id="busi_48"></div>
+        <div class="buso" id="buso_48"></div>
+        <div class="bpni" id="bni_48"></div>
+        <div class="bpno" id="bno_48"></div>
+    </div>
+    <div class="sm left " id="block_49" data-floating="left" data-stop="深丘里(板橋放送所)">
+        <div class="snz"><span>深丘里(板橋放送所)</span></div>
+        <div class="sflag" id="sflag_49">
+                                                                    </div>
+        <div class="sicon"></div>
+        <div class="eta" id="eta_49"></div>
+        <div class="busi" id="busi_49"></div>
+        <div class="buso" id="buso_49"></div>
+        <div class="bpni" id="bni_49"></div>
+        <div class="bpno" id="bno_49"></div>
+    </div>
+                <div class="srt left "></div>
+                <div class="srb right "></div>
+    <div class="sm right " id="block_50" data-floating="right" data-stop="新北市政府(新府路)">
+        <div class="snz2"><span>新北市政府(新府路)</span></div>
+        <div class="sflag2" id="sflag_50">
+                                                                <span class="stopIconYouBike"></span>
+                    </div>
+        <div class="sicon2"></div>
+        <div class="eta2" id="eta_50"></div>
+        <div class="busi2" id="busi_50"></div>
+        <div class="buso2" id="buso_50"></div>
+        <div class="bpni2" id="bni_50"></div>
+        <div class="bpno2" id="bno_50"></div>
+    </div>
+    <div class="sm right " id="block_51" data-floating="right" data-stop="新北板橋公車站">
+        <div class="snz2"><span>新北板橋公車站</span></div>
+        <div class="sflag2" id="sflag_51">
+                <span class="stopIconTRW"></span>
+                                                                <span class="stopIconYouBike"></span>
+                    </div>
+        <div class="sicon2"></div>
+        <div class="eta2" id="eta_51"></div>
+        <div class="busi2" id="busi_51"></div>
+        <div class="buso2" id="buso_51"></div>
+        <div class="bpni2" id="bni_51"></div>
+        <div class="bpno2" id="bno_51"></div>
+    </div>
+    <div class="sm right " id="block_52" data-floating="right" data-stop="萬坪公園">
+        <div class="snz2"><span>萬坪公園</span></div>
+        <div class="sflag2" id="sflag_52">
+                                                                    </div>
+        <div class="sicon2"></div>
+        <div class="eta2" id="eta_52"></div>
+        <div class="busi2" id="busi_52"></div>
+        <div class="buso2" id="buso_52"></div>
+        <div class="bpni2" id="bni_52"></div>
+        <div class="bpno2" id="bno_52"></div>
+    </div>
+    <div class="sm right " id="block_53" data-floating="right" data-stop="北門街">
+        <div class="snz2"><span>北門街</span></div>
+        <div class="sflag2" id="sflag_53">
+                                                                <span class="stopIconYouBike"></span>
+                    </div>
+        <div class="sicon2"></div>
+        <div class="eta2" id="eta_53"></div>
+        <div class="busi2" id="busi_53"></div>
+        <div class="buso2" id="buso_53"></div>
+        <div class="bpni2" id="bni_53"></div>
+        <div class="bpno2" id="bno_53"></div>
+    </div>
+    <div class="sm right " id="block_54" data-floating="right" data-stop="板橋戶政事務所(黃石中繼市場)">
+        <div class="snz2"><span>板橋戶政事務所(黃石中繼市場)</span></div>
+        <div class="sflag2" id="sflag_54">
+                                                                <span class="stopIconYouBike"></span>
+                    </div>
+        <div class="sicon2"></div>
+        <div class="eta2" id="eta_54"></div>
+        <div class="busi2" id="busi_54"></div>
+        <div class="buso2" id="buso_54"></div>
+        <div class="bpni2" id="bni_54"></div>
+        <div class="bpno2" id="bno_54"></div>
+    </div>
+    <div class="sm right " id="block_55" data-floating="right" data-stop="社后">
+        <div class="snz2"><span>社后</span></div>
+        <div class="sflag2" id="sflag_55">
+                                                                    </div>
+        <div class="sicon2"></div>
+        <div class="eta2" id="eta_55"></div>
+        <div class="busi2" id="busi_55"></div>
+        <div class="buso2" id="buso_55"></div>
+        <div class="bpni2" id="bni_55"></div>
+        <div class="bpno2" id="bno_55"></div>
+    </div>
+    <div class="sm right " id="block_56" data-floating="right" data-stop="大庭新村">
+        <div class="snz2"><span>大庭新村</span></div>
+        <div class="sflag2" id="sflag_56">
+                                                                    </div>
+        <div class="sicon2"></div>
+        <div class="eta2" id="eta_56"></div>
+        <div class="busi2" id="busi_56"></div>
+        <div class="buso2" id="buso_56"></div>
+        <div class="bpni2" id="bni_56"></div>
+        <div class="bpno2" id="bno_56"></div>
+    </div>
+                <div class="slt right "></div>
+                <div class="slb left "></div>
+    <div class="sm left " id="block_57" data-floating="left" data-stop="港尾福德宮">
+        <div class="snz"><span>港尾福德宮</span></div>
+        <div class="sflag" id="sflag_57">
+                                                                    </div>
+        <div class="sicon"></div>
+        <div class="eta" id="eta_57"></div>
+        <div class="busi" id="busi_57"></div>
+        <div class="buso" id="buso_57"></div>
+        <div class="bpni" id="bni_57"></div>
+        <div class="bpno" id="bno_57"></div>
+    </div>
+    <div class="sm left " id="block_58" data-floating="left" data-stop="港尾">
+        <div class="snz"><span>港尾</span></div>
+        <div class="sflag" id="sflag_58">
+                                                                    </div>
+        <div class="sicon"></div>
+        <div class="eta" id="eta_58"></div>
+        <div class="busi" id="busi_58"></div>
+        <div class="buso" id="buso_58"></div>
+        <div class="bpni" id="bni_58"></div>
+        <div class="bpno" id="bno_58"></div>
+    </div>
+    <div class="sm left " id="block_59" data-floating="left" data-stop="板橋國中(435藝文特區)">
+        <div class="snz"><span>板橋國中(435藝文特區)</span></div>
+        <div class="sflag" id="sflag_59">
+                                                                    </div>
+        <div class="sicon"></div>
+        <div class="eta" id="eta_59"></div>
+        <div class="busi" id="busi_59"></div>
+        <div class="buso" id="buso_59"></div>
+        <div class="bpni" id="bni_59"></div>
+        <div class="bpno" id="bno_59"></div>
+    </div>
+    <div class="sm left " id="block_60" data-floating="left" data-stop="名來新城(中正路)">
+        <div class="snz"><span>名來新城(中正路)</span></div>
+        <div class="sflag" id="sflag_60">
+                                                                    </div>
+        <div class="sicon"></div>
+        <div class="eta" id="eta_60"></div>
+        <div class="busi" id="busi_60"></div>
+        <div class="buso" id="buso_60"></div>
+        <div class="bpni" id="bni_60"></div>
+        <div class="bpno" id="bno_60"></div>
+    </div>
+    <div class="se left " id="block_61" data-floating="left" data-stop="臺北客運板橋前站(藝文)">
+        <div class="snz"><span>臺北客運板橋前站(藝文)</span></div>
+        <div class="sflag" id="sflag_61">
+                                                                    </div>
+        <div class="sicon-endpoint"></div>
+        <div class="eta" id="eta_61"></div>
+        <div class="busi" id="busi_61"></div>
+        <div class="buso" id="buso_61"></div>
+        <div class="bpni" id="bni_61"></div>
+        <div class="bpno" id="bno_61"></div>
+    </div>
+
+
+
+    
+
+
+            </div>
+            <div class="clear"></div>
+        </div>
+
+    </div>
+ </section>
+
+    <script type="text/javascript">
+        var _uniRouteId2 = '0100030700';
+        var _goBack2 = '1';
+        var _CarCount = [];
+        $(document).ready(function () {
+            
+
+            AptsBusMap.init({
+                AptsSpringWebHome: '/',
+                uniRouteId: '0100030700',
+                goBack: '1'
+            });
+            AptsBusMap.start();
+        });
+
+        var AptsBusMap = (function () {
+            var _AptsSpringWebHome;
+            var _uniRouteId;
+            var _goBack;
+            var _mapContainerId;
+            var _updateRouteInfoTimer;
+            var _isAjaxLoading = false;
+            var _CarCount = [];
+
+            function initRouteInfoToggle() {
+                $('#aRouteInfo').click(function () {
+                    if ($('#pl_route_info:visible').length) {
+                        $("#pl_route_info").hide("slow", function () {
+                            $("#aRouteInfoMark").text("+");
+                        });
+                    }
+                    else {
+                        $("#pl_route_info").show("slow", function () {
+                            $("#aRouteInfoMark").text("-");
+                        });
+                    }
+                });
+                $('#aRouteMemo').click(function () {
+                    if ($('#pl_route_memo:visible').length) {
+                        $("#pl_route_memo").hide("slow", function () {
+                            $("#aRouteMemoMark").text("+");
+                        });
+                    }
+                    else {
+                        $("#pl_route_memo").show("slow", function () {
+                            $("#aRouteMemoMark").text("-");
+                        });
+                    }
+                });
+            }
+
+            function displayBusTw2(io, idx, oBusInfo) {
+                bpnId = (io == "i") ? "#bni_" + idx : "#bno_" + idx;
+                busIconId = (io == "i") ? "#busi_" + idx : "#buso_" + idx;
+                busCss = getBusCss(oBusInfo);
+                bnCss = getBnCss(oBusInfo);
+                if (io == "i") {
+                    _CarCount[idx] = _CarCount[idx] + 1;
+                    bnCss = bnCss + " center";
+                }
+                $("<span class='" + bnCss + "'>" + oBusInfo.bn + "</span>").appendTo(bpnId);
+                $(busIconId).html("<div class='" + busCss + "'></div>");
+            }
+
+            function getBusCss(oBusInfo) {
+                busCss = "bh";
+                if (oBusInfo.bt == "0") {
+                    busCss = "bh";
+                } else if (oBusInfo.bt == "1") {
+                    busCss = "bl";
+                } else if (oBusInfo.bt == "2") {
+                    busCss = "bf";
+                } else if (oBusInfo.bt == "3") {
+                    busCss = "bo";
+                } else {
+                    busCss = "bh";
+                }
+                return busCss;
+            }
+
+            function getBnCss(oBusInfo) {
+                bnCss = "bnh";
+                if (oBusInfo.bt == "0") {
+                    bnCss = "bnh";
+                } else if (oBusInfo.bt == "1") {
+                    bnCss = "bnl";
+                } else if (oBusInfo.bt == "2") {
+                    bnCss = "bnf";
+                } else if (oBusInfo.bt == "3") {
+                    bnCss = "bno";
+                } else {
+                    bnCss = "bnh";
+                }
+                return bnCss;
+            }
+
+            function toEtaTw(eta) {
+                etaString = "";
+                if (eta == '-1') {
+                    etaString = "未發車";
+                } else if (eta == '-2') {
+                    etaString = "末班車<br />已駛離";
+                } else if (eta == '-3') {
+                    etaString = "交管不停靠";
+                } else if (eta == '-4') {
+                    etaString = "今日未營運";
+                } else if (eta < 3) {
+                    etaString = "進站中";
+                } else {
+                    etaString = "約" + eta + "分";
+                }
+                return etaString;
+            }
+
+            function getEtaCss(eta) {
+                etaCss = "eta";
+                if (eta == '-1') {
+                    etaCss = "eta_nonop";
+                } else if (eta == '-2') {
+                    etaCss = "eta_nonop";
+                } else if (eta == '-3') {
+                    etaCss = "eta_nonop";
+                } else if (eta == '-4') {
+                    etaCss = "eta_nonop";
+                } else if (eta < 3) {
+                    etaCss = "eta_coming";
+                } else {
+                    etaCss = "eta_onroad";
+                }
+                return etaCss;
+            }
+
+            function fetchRouteInfo() {
+                var jsDataUrl = _AptsSpringWebHome + '/EBus/GetStopDyns';
+
+                $.ajax({
+                    url: jsDataUrl,
+                    type: 'post',
+                    async: false,
+                    cache: false,
+                    //data: {  },
+                    dataType: 'json',
+                    data: {
+                        '__RequestVerificationToken': $('input[name=__RequestVerificationToken]').val(),
+                        'X-Requested-With': 'XMLHttpRequest',
+                        routeid: _uniRouteId, gb: _goBack
+                    },
+                    success: function (data) {
+                        if (data.length < 1) {
+                            alert("error:" + data.msg);
+                            return;
+                        }
+                        $(".eta").html("");
+                        $(".eta2").html("");
+                        $(".busi").html("");
+                        $(".busi2").html("");
+                        $(".buso").html("");
+                        $(".buso2").html("");
+                        $(".bpni").html("");
+                        $(".bpni2").html("");
+                        $(".bpno").html("");
+                        $(".bpno2").html("");
+                        $(data).each(function () {
+                            var sn = this.sn;
+                            _CarCount[this.sn] = 0;
+
+                            var floating = $("#block_" + sn).data("floating");
+                            var stopName = $("#block_" + sn).data("stop");
+                            //$("#sflag_" + sn).find('.stopIconYouBike').remove();
+                            //$("#sflag_" + sn).find('.stopIconNewBike').remove();
+                            //if (this.ub == '1') {
+                            //    //var bikeIcon = "<span class='stopIconYouBike' onclick=\"AptsBusMap.showBike(this, '" + stopName + "');\"></span>"; vic
+                            //    var bikeIcon = "<span class='stopIconYouBike' ></span>";
+                            //    $(bikeIcon).data("ano", this.ano).data("pno", this.pno).data("bitime", this.bitime).appendTo("#sflag_" + sn);
+                            //    //$("<span class='stopIconYouBike' onclick='showBike(this);'></span>").appendTo("#sflag_" + sn);
+                            //    //$("<div class='hidden'>站點名稱：台北火車站<br />可借車輛：20輛<br />可停車輛：10輛<br />查詢時間：20141007163010<br /></div>").appendTo("#sflag_" + sn);
+                            //}
+                            //if (this.ub == '3') {
+                            //    //var bikeIcon = "<span class='stopIconNewBike' onclick=\"AptsBusMap.showBike(this, '" + stopName + "');\"></span>"; vic
+                            //    var bikeIcon = "<span class='stopIconNewBike' ></span>";
+                            //    $(bikeIcon).data("ano", this.ano).data("pno", this.pno).data("bitime", this.bitime).appendTo("#sflag_" + sn);
+                            //    //$("<span class='stopIconNewBike' onclick='showBike(this);'></span>").appendTo("#sflag_" + sn);
+                            //    //$("<div class='hidden'>站點名稱：台北火車站<br />可借車輛：20輛<br />可停車輛：10輛<br />查詢時間：20141007163010<br /></div>").appendTo("#sflag_" + sn);
+                            //}
+
+                            $(this.bi).each(function () {
+                                displayBusTw2('i', sn, this);
+                            });
+                            $(this.bo).each(function () {
+                                displayBusTw2('o', sn, this);
+                            });
+
+                            if (_CarCount[this.sn] == 0) {
+                                etaiId = "#eta_" + sn;
+                                etaString = toEtaTw(this.eta);
+                                etaCss = getEtaCss(this.eta);
+                                $(etaiId).html("<span class='" + etaCss + "'>" + etaString + "</span>");
+                            }
+                        });
+                        //$(data.Buses).each(function () {
+                        //    fnDisplayBus(this);
+                        //});
+                        var now = new Date();
+                        var hour = now.getHours();
+                        var minute = now.getMinutes();
+                        var sec = now.getSeconds();
+                        var updateAt = "更新時間：";
+                        if (hour < 10)
+                            updateAt = updateAt + "0";
+                        updateAt = updateAt + hour + "：";
+                        if (minute < 10)
+                            updateAt = updateAt + "0";
+                        updateAt = updateAt + minute + "：";
+                        if (sec < 10)
+                            updateAt = updateAt + "0";
+                        updateAt = updateAt + sec;
+
+                        $("#plLastUpdateTime").html(updateAt);
+                    }
+                });
+            }
+
+            function loadBusMap() {
+                var pvTwMapUrl = _AptsSpringWebHome + "/EBus/VsSimpleMap";
+                $.ajax({
+                    url: pvTwMapUrl,
+                    type: 'Get',
+                    data: { id: _uniRouteId, gb: _goBack },
+                    dataType: 'html',
+                    success: function (data) {
+                        $("#" + _mapContainerId).html(data);
+                        initBusMap();
+                    }
+                });
+            }
+
+            function startTimer() {
+                fetchRouteInfo();
+                _updateRouteInfoTimer = setInterval(AptsBusMap.doFetchRouteInfo, 15000);
+            }
+
+            function initBusMap() {
+                initRouteInfoToggle();
+                startTimer();
+            }
+
+            function endsWith(str, suffix) {
+                return str.indexOf(suffix, str.length - suffix.length) !== -1;
+            }
+
+            return {
+                init: function (setting) {
+                    _AptsSpringWebHome = setting.AptsSpringWebHome;
+                    _uniRouteId = setting.uniRouteId;
+                    _goBack = setting.goBack;
+                    if (endsWith(_AptsSpringWebHome, "/")) {
+                        _AptsSpringWebHome = _AptsSpringWebHome.substring(0, _AptsSpringWebHome.length - 1);
+                    }
+                },
+                load: function (mapContainerId) {
+                    _mapContainerId = mapContainerId;
+                    _isAjaxLoading = true;
+                    loadBusMap();
+                },
+                start: function () {
+                    initBusMap();
+                },
+                doFetchRouteInfo: function () {
+                    fetchRouteInfo();
+                },
+                changeGoBack: function (goBack) {
+                    if (_goBack == goBack) {
+                        return;
+                    }
+                    _goBack = goBack;
+                    clearInterval(_updateRouteInfoTimer);
+                    if (!_isAjaxLoading) {
+                        window.location = _AptsSpringWebHome + "/EBus/VsSimpleMap?routeid=" + _uniRouteId + "&gb=" + _goBack;
+                    } else {
+                        loadBusMap();
+                    }
+                },
+                showBike: function (bikeObj, stopName) {
+                    var tipcontent = "<div><span class='tipTitle'>站點名稱：</span>" + stopName + "<span class='tipClose'>x</span></div>";
+                    tipcontent = tipcontent + "<div><span class='tipTitle'>可借車輛：</span>" + $(bikeObj).data("ano") + "</div>";
+                    tipcontent = tipcontent + "<div><span class='tipTitle'>可停車輛：</span>" + $(bikeObj).data("pno") + "</div>";
+                    //tipcontent = tipcontent + "<div><span class='tipTitle'>查詢時間：</span>" + $(bikeObj).data("bitime") + "</div>";
+                    var tip = $("<div class='tooltip'><div class='tipBody'>" + tipcontent + "</div></div>")
+                    .css('top', '22px')
+                    .css('left', '-5px');
+                    $(tip).appendTo(bikeObj);
+
+                    $('.tipClose').on('click', function () {
+                        $(this).parent().parent().parent().remove();
+                        return false;
+                    });
+                }
+            }
+        }());
+
+        
+
+
+    </script>
+
+    </div>
+    <!-- end content -->
+    <!-- loading dialog -->
+    <div id="Loading_DL" class="teBus-dialog-c" style="display: none;">
+        <div class="teBus-dialog loading-dialog-c">
+            <p class="loading-dialog-p"><img src="/images/dialog_loading_bus_img.gif" class="loading-dialog-img" width="100%" alt=" ">資料載入中，請稍候</p>
+        </div>
+    </div>
+    <!-- end loading dialog -->
+    
+<footer class="teBUS-main-footer">
+    <div class="teBUS-main-footer-logo">
+                <a href="https://www.gov.taipei/" target="_blank" class="teBUS-main-footer-taipei" title="臺北市政府" alt="臺北市政府"><img src="/images/taipei_city.svg" width="100%" title="臺北市政府" alt="臺北市政府"></a>
+                <a href="https://www.ntpc.gov.tw/" target="_blank" class="teBUS-main-footer-new-taipei" title="新北市政府" alt="新北市政府"><img src="/images/new_taipei_city.svg" width="100%" title="新北市政府" alt="新北市政府"></a>
+
+      
+        <span class="teBUS-main-footer-ebus-logo" title="大臺北公車"><img src="/images/logo_img02.svg" width="100%" title="大臺北公車" alt="大臺北公車"></span>
+    </div>
+    <div class="teBUS-main-footer-text">
+        <p class="teBUS-main-footer-Copyright">本網站所有版權歸屬於臺北市政府與新北市政府 Copyright&#169;2014<span></span></p>
+        <p>
+            建議瀏覽器IE9.0以上版本/Firefox/Google Chrome (最佳螢幕解析1024*768) <br />
+            如有Taipei eBus網站服務任何問題，請撥1999或來信taipei_ebus@mail.taipei.gov.tw為您服務
+            聯絡地址:11086臺北市信義區松德路300號4樓
+        </p>
+    </div>
+    <div class="teBUS-main-footer-link-pool">
+        <a href="/Home/WebSite" class="teBUS-main-footer-link" target="_self">網站導覽</a>
+        
+        <a href="/Home/CopyrightNotice" class="teBUS-main-footer-link" target="_self">著作權聲明</a>
+        <a href="/Home/SecurityPrivacyPolicy" class="teBUS-main-footer-link" target="_self">隱私權及網站安全政策</a>
+        <p class="teBUS-main-footer-date">網站更新日期:<span>2023/02/21</span><br />網站檢視日期:2023/02/21</p>
+    </div>
+</footer>
+<!-- end footer -->
+
+    <script src="/bundles/modernizr?v=wBEWDufH_8Md-Pbioxomt90vm6tJN2Pyy9u9zHtWsPo1"></script>
+
+    <script src="/bundles/site?v=EFYqh1PrfQLrFeLYHG7guSa7u7t-ibfK8IJ50XUxm3g1"></script>
+
+    <script src="/bundles/sweetAlert?v=cMcnF9PMfZnW6d_oMLsRilV8d-Fh8HT8X6rfi8S_EV41"></script>
+
+    
+    <script>
+        $(function () {
+            window.alert = sweetAlert;
+
+            // Selected language radio button
+            $('input[name=culture]').click(function () {
+                $('.teBUS-pad-main-nav-icon').slideToggle({
+                    complete: function () {
+                        $('#SetCultureForm').submit();
+                    }
+                })
+            });
+            $('#Loading_DL').show();
+            $('#Loading_DL').dialog({
+                autoOpen: false,
+                modal: true,
+                width: $('#Loading_DL').width(),
+                minHeight: 60,
+                show: false,
+                buttons: {},
+                hide: false
+            });
+            $(".ui-dialog-titlebar").hide();
+
+            // Scroll to Top Action
+            $('a.tebus-up').click(function () {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 700);
+                return false;
+            });
+        });
+
+        function OpenLoadingDialog() {
+            if ($('#Loading_DL').dialog("instance") !== undefined) {
+                $('#Loading_DL').dialog("open");
+            }
+        }
+
+        function CloseLoadingDialog() {
+            $('#Loading_DL').dialog("close");
+        }
+
+        function toggleMenu() {
+            $('.teBUS-pad-main-nav-icon').slideToggle();
+        }
+
+        function goTop() {
+            window.document.body.scrollTop = 0;
+        }
+
+        //$(".nav-language-link").click(function () {
+        //    href = $(this).attr('href');
+        //    lang = href.match('(^|/?)?culture=([^&]*)(&|$)');
+
+        //    localStorage["culture"] = lang[2];
+        //});
+    </script>
+</body>
+
+
+</html>
